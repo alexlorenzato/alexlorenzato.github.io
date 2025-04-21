@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
 /* Navbar */
 .minimal-nav {
     text-align: center;
@@ -6,37 +8,32 @@
     font-size: 1rem;
     text-transform: uppercase;
     margin-top: 2rem;
-  }
-  
-  .minimal-nav a {
+}
+
+.minimal-nav a {
     text-decoration: none;
     color: white;
     opacity: 0.7;
     transition: opacity 0.2s ease;
     margin: 0 1rem;
     display: inline-block;
-  }
-  
-  .minimal-nav a:hover {
-    opacity: 1;
-  }
+}
 
-  
-  /* ROBA VECCHIA */
+.minimal-nav a:hover { opacity: 1; }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
 
 
 /************  GENERALI  ************/
 :root {
-    --background-color: rgb(52, 49, 46); 
+    --background-color: rgb(52, 49, 46);
     --accent-color: rgb(241, 187, 139);
     --accent-color-hover: rgb(238, 169, 71);
     --base-color: rgba(0, 0, 0, 0.7);
     --base-color-hover: rgba(0, 0, 0, 0.9);
 }
 
-body, html {
+body,
+html {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -46,90 +43,30 @@ body, html {
     background-color: var(--background-color);
 }
 
-@keyframes fadeInAnimation {        /* per animazione di non ricordo cosa */
+/* per animazione di non ricordo cosa */
+@keyframes fadeInAnimation {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
 
-
-/************  HOME PAGE  ************/
-.bg-image {
-    position: relative;
-    height: 100vh;
-    background-image: url('imgs/img-1.jpg'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* per animazione */
-    opacity: 0;
-    animation: fadeInAnimation ease 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-
-.enter-btn-container {
-    position: relative;
-    width: 25vw;
-    height: 25vh;
-    background-color: rgba(0, 0, 0, 0.5); 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    border-radius: 10px; 
-    padding: 10px; 
-    box-sizing: border-box; 
-}
-
-.enter-btn {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    background-color: var(--base-color);
-    border-radius: 30px;
-    cursor: pointer;
-    margin-top: 45px;
-    text-decoration: none;
-    font-weight: 100;
-}
-
-.bg-image .enter-btn:hover {
-    background-color: var(--base-color-hover);
-}
-
-.motto {
-    color: var(--accent-color);
-    font-size: 1.3rem;
-    text-align: center;
-    font-style: italic;
-    font-weight: 100;
-    margin-bottom: 10px;
-}
-
-
-
 /************  NAVBAR  ************/
 .navbar {
-    position: fixed;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.6);
     color: var(--text-color);
     text-align: center;
     padding: 15px 0px;
-    z-index: 1000; 
-    transition: top 0.7s ease; 
+    z-index: 1000;
+    transition: top 0.7s ease;
     font-weight: 100;
+    margin-top: 15px;
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 6vw;                /* Spazio tra i link */
+    gap: 6vw;
 }
 
 .nav-links a {
@@ -152,21 +89,20 @@ body, html {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 20px;
-    padding-top: 35px;
 }
-  
-.column {            /* layout standard: 2 colonne */
+
+.column {
+    /* layout standard: 2 colonne */
     padding: 0.5%;
     flex: 50%;
     max-width: 49%;
 }
-  
+
 .column img {
     margin-top: 25px;
     vertical-align: middle;
     width: 100%;
     border-radius: 5px;
-
     transition: transform 0.3s ease; /* per animazione hover */
 
     /* per animazione fade-in */
@@ -183,41 +119,10 @@ body, html {
 
 
 
-/************  LOAD MORE  ************/
-  .load-more-container {
-    text-align: center;  
-    padding: 20px;   
-    background-color: var(--background-color);
-}
-
-.load-more-btn {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 30px;
-    background-color: var(--base-color);
-    color: var(--accent-color);
-    transition: background-color 0.3s ease;
-    font-family: inherit;
-    font-weight: 100;
-
-    /* per animazione */
-    opacity: 0;
-    animation: fadeInAnimation ease 1.6s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-.load-more-btn:hover {
-    background-color: var(--base-color-hover);
-}
-
-
-
 /************  POPUP  ************/
 .fullscreen-popup {
-    display: none; /* Nasconde il popup di default */
+    display: none;
+    /* Nasconde il popup di default */
     position: fixed;
     top: 0;
     left: 0;
@@ -226,14 +131,14 @@ body, html {
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Assicurati che il popup sia sopra altri contenuti */
+    z-index: 1000;
 }
 
 .fullscreen-image {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 95%;
+    max-height: 95%;
     margin: auto;
-    border: 20px solid rgb(255, 255, 255, 0.8);
+    border: 10px solid rgba(151, 145, 132, 0.668);
     border-radius: 15px;
 }
 
@@ -249,53 +154,19 @@ body, html {
 
 
 
-
-
-
 /*++++++++++++++++++++++++++++++++++++++*/
 /*+++++++++++ RESPONSIVENESS +++++++++++*/
 /*++++++++++++++++++++++++++++++++++++++*/
 
 /************ COLONNE GALERIA ************/
-  
-@media screen and (max-width: 900px) {      /* makes the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 900px) {
+    /* makes the two columns stack on top of each other instead of next to each other */
     .column {
         flex: 100%;
         max-width: 100%;
     }
 }
 
-/************ HOME PAGE (MOTTO) ************/
-
-@media screen and (max-width: 800px) {
-    .enter-btn-container {
-        width: 75vw;
-    }
-    .motto {
-        font-size: 1.2rem;
-    }
-    .enter-btn {
-        padding: 10px 20px;
-        font-size: 1rem;
-        border-radius: 20px;
-    }
-}
-
-@media screen and (max-width: 1500px) {
-    .enter-btn-container {
-        width: 45vw;
-    }
-}
-
-@media screen and (max-height: 600px) {
-    .enter-btn-container {
-        height: 50vh;
-    }
-}
-
 /************ NAVBAR ************/
-@media screen and (max-width: 800px) {
-    .nav-links a {
-        font-size: 1rem;
-    }
-}
+@media screen and (max-width: 800px) { .nav-links a { font-size: 1rem; } } 
