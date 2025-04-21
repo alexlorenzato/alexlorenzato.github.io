@@ -5,12 +5,12 @@
 
 const load_more_btn = document.getElementById("loadMoreBtn");
 const gallery_inner = document.getElementById('galleryInner');
-let no_more_imgs = false;
-const imgs_to_load = 10;       // num immagini da caricare cliccando "load more"
-let imgs_index = 7;        // indice successivo all'ultima immagine caricata 
-let img_folder = "../../media/photography/imgs";
-
-
+const imgs_to_load  = 10;       // num immagini da caricare cliccando "load more"
+let   no_more_imgs  = false;
+let   imgs_index    = 7;        // indice successivo all'ultima immagine caricata 
+let   img_folder    = "../../media/photography/imgs";
+let   img_subname   = "img";
+  
 
 /*********************************/
 /*             SETUP             */
@@ -55,11 +55,11 @@ function loadMoreImages() {
     const column_1 = document.getElementById("columnId1");
     const column_2 = document.getElementById("columnId2");
 
-    let img_subname = "img";
-    if (window.location.pathname.includes("videogames")) {
-        img_folder = "/videogames";
-        img_subname = "vg";
-    }
+    // let img_subname = "img";
+    // if (window.location.pathname.includes("videogames")) {
+    //     img_folder = "/videogames";
+    //     img_subname = "vg";
+    // }
 
     for (let i = imgs_index; i < imgs_index + imgs_to_load; i += 2) {
         const img_1 = document.createElement('img');
@@ -154,3 +154,68 @@ function redistributeImages() {
         else {                 column_2.appendChild(img); }
     });
 }
+
+
+
+
+/* jyertbw cambia galleria */
+document.getElementById('btnPhotography').addEventListener('click', function (e) {
+    e.preventDefault();
+    switchGallery("photography", "../../media/photography/imgs", "img");
+});
+
+document.getElementById('btnVideogames').addEventListener('click', function (e) {
+    e.preventDefault();
+    switchGallery("videogames", "../../media/photography/videogames", "vg");
+});
+
+function switchGallery(mode, folder, prefix) {
+    // Reset
+    imgs_index   = 1;
+    no_more_imgs = false;
+    img_folder   = folder;
+    img_subname  = prefix;
+
+    const column_1 = document.getElementById("columnId1");
+    const column_2 = document.getElementById("columnId2");
+
+    // Pulisci la galleria attuale
+    column_1.innerHTML = '';
+    column_2.innerHTML = '';
+
+    // Aggiorna lo stile attivo nella navbar
+    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+    if (mode === "photography") {
+        document.getElementById('btnPhotography').classList.add('active');
+    } else if (mode === "videogames") {
+        document.getElementById('btnVideogames').classList.add('active');
+    }
+
+    // Carica prime immagini
+    for (let i = imgs_index; i < imgs_index + imgs_to_load; i += 2) {
+        const img_1 = document.createElement('img');
+        const img_2 = document.createElement('img');
+
+        img_1.src = `${folder}/${prefix}-${i}.jpg`;
+        img_2.src = `${folder}/${prefix}-${i + 1}.jpg`;
+
+        if (window.innerWidth < 914) {
+            column_2.appendChild(img_1);
+            column_2.appendChild(img_2);
+        } else {
+            column_1.appendChild(img_1);
+            column_2.appendChild(img_2);
+        }
+
+        img_1.onerror = () => {
+            no_more_imgs = true;
+            img_1.remove();
+            observer.unobserve(sentinel);
+        };
+        img_2.onerror = () => { img_2.remove(); };
+    }
+
+    setupImageClickListeners();
+    imgs_index += imgs_to_load;
+}
+

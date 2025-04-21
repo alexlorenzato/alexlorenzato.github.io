@@ -152,6 +152,15 @@ html {
 }
 
 
+/**/
+.nav-links a.active {
+    color: aquamarine;
+    font-weight: bold;
+    opacity: 1;
+  }
+  
+
+
 
 
 /*++++++++++++++++++++++++++++++++++++++*/
