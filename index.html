@@ -1,44 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="stylesheet" href="code/home/style.css" />
+  <script src="code/home/script.js" defer></script>
 
-<!-- Import style and script-->
-<link rel="stylesheet" href="code/home/style.css">
-<script src="code/home/script.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Lorenzato</title>
+  </head>
 
-<!-- Header stuff -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Alex Lorenzato </title>
-</head>
-
-<!-- Body -->
-<body>
-
-    <!-- LEARNING.. --> 
+  <body>
+    <!-- LEARNING... -->
     <div class="wrapper">
-        <span class="letter letter1"> L </span>
-        <span class="letter letter2"> e </span>
-        <span class="letter letter3"> a </span>
-        <span class="letter letter4"> r </span>
-        <span class="letter letter5"> n </span>
-        <span class="letter letter6"> i </span>
-        <span class="letter letter7"> n </span>
-        <span class="letter letter8"> g </span>
-        <span class="letter letter9"> . </span>
-        <span class="letter letter10"> . </span>
-      </div>
-
-    <div class="profile">
-        <img src="/media/propic.png" alt="Profile Picture">
-        <div class="name"> Alex Lorenzato </div>
-        <div class="quote"> Inspiring quote. </div>
-        <div class="location"> Bassano del Grappa </div>
-        <div class="topics">
-          <a href="code/cv/cv_index.html" class="button-53-cv button-53" style="background-color: brown;"> CV </a>
-          <a href="code/photography/photography_index.html" class="button-53-pht button-53" style="background-color: rgb(68, 154, 153);"> PHOTOGRAPHY </a>
-          <a href="code/photography/photography_index.html" class="button-53-abt button-53" style="background-color: rgb(215, 210, 116);"> BLOG-ABOUT </a>
-        </div>
+      <span class="letter letter1"> L </span>
+      <span class="letter letter2"> e </span>
+      <span class="letter letter3"> a </span>
+      <span class="letter letter4"> r </span>
+      <span class="letter letter5"> n </span>
+      <span class="letter letter6"> i </span>
+      <span class="letter letter7"> n </span>
+      <span class="letter letter8"> g </span>
+      <span class="letter letter9"> . </span>
+      <span class="letter letter10"> . </span>
+      <span class="letter letter11"> . </span>
     </div>
-</body>
+
+    <!-- Propic, nome, quote e posizione -->
+    <div class="container">
+      <div id="propic-container">
+        <img src="/media/propic.png" alt="Profile Picture" />
+      </div>
+      <div id="name-quote-container">
+        <div id="name">Alex Lorenzato</div>
+        <div id="quote">Inspiring quote that could be very long.</div>
+        <div id="location">Bassano del Grappa, Italy</div>
+      </div>
+    </div>
+
+    <!-- Topics -->
+    <div id="topics">
+      <a
+        href="code/cv/cv_index.html"
+        class="button-53-cv button-53"
+        style="background-color: brown"
+      >
+        CV
+      </a>
+      <a
+        href="https://github.com/alexlorenzato"
+        class="button-53-github button-53"
+        style="background-color: rgb(121, 16, 111)"
+      >
+        GITHUB
+      </a>
+      <a
+        href="code/photography/photography_index.html"
+        class="button-53-photography button-53"
+        style="background-color: rgb(68, 154, 153)"
+      >
+        <svg
+          class="size-6 text-gray-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        PHOTOGRAPHY
+      </a>
+    </div>
+  </body>
 </html>
