@@ -8,15 +8,17 @@
     <title>Lorenzato - About</title>
   </head>
 
-  <body class="antialiased bg-black">
+  <body class="antialiased bg-gradient-to-r from-slate-950 to-teal-950">
+
+    
 
     <!-- NavBar -->
-    <nav class="bg-black/90 p-6">
+    <nav class="p-6">
       <div class="mx-auto flex items-center">
         <!-- Menu desktop (nascosto su mobile) -->
         <ul id="menu" class="hidden lg:flex mx-auto justify-center space-x-8 text-white">
-          <li><a href="index.html" class="hover:text-gray-500 text-xl">Home</a></li>
-          <li><a href="about.html" class="hover:text-gray-500 text-xl">About</a></li>
+          <li><a href="../index.html" class="hover:text-gray-500 text-xl">Home</a></li>
+          <li><a href="#" class="hover:text-gray-500 text-xl">About</a></li>
           <li><a href="photography.html" class="hover:text-gray-500 text-xl">Photography</a></li>
         </ul>
         <!-- Hamburger button -->
@@ -28,10 +30,10 @@
       </div>
       <!-- Menu mobile -->
       <ul id="mobileMenu"
-        class="lg:hidden flex flex-col text-white mx-auto items-center fixed left-0 w-full z-50 pb-4 bg-black/90 transition-all duration-300 ease-in-out opacity-0 -translate-y-3 pointer-events-none">
-        <li><a href="index.html" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl">Home</a></li>
-        <li><a href="about.html" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl">About</a></li>
-        <li><a href="photography.html"
+        class="left-1/2 -translate-x-1/2 w-[95%] mx-auto rounded-2xl bg-gradient-to-b from-gray-950/0 to-gray-950 lg:hidden flex flex-col text-white items-center fixed z-50 pb-4 transition-all duration-300 ease-in-out opacity-0 -translate-y-3 pointer-events-none">
+        <li><a href="../index.html" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl">Home</a></li>
+        <li><a href="#" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl">About</a></li>
+        <li><a href="/src/photography.html"
             class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl">Photography</a></li>
       </ul>
     </nav>
@@ -40,50 +42,61 @@
 
     <div class="flex flex-col md:flex-row">
       <!-- Contenuto metà sinistra -->
-      <div id="area-sx" class="w-full md:w-1/2 pr-8 pl-8 pb-8">
+      <div id="area-sx" class="w-full md:w-1/2 p-8 lg:pb-20 lg:pt-20 lg:pl-[10vw] lg:ml-10">
 
         <!-- Bio -->
         <div id="bio-container">
-          <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl"> Bio </h2>
-          <div class="h-0.5 max-w-[300px] bg-gradient-to-r from-blue-500 via-pink-500/50 to-pink-500/10 my-4"></div>
-          <p class="text-white p-4">
-            Cose interessanti su di me: tutti i capi che ho avuto volevano tenermi, ho anche ricevuto offerte di promozione in tempi brevi.
-            Altre cose interessanti che faccio, ho fatto parte del direttivo di un'associazione di giochi da tavolo.
-            Ho degli hobby che elencherò quando finisco sto sito, intanto sto mettendo del testo di prova.
-          </p>
-        </div>
-        
-        <!-- Knowledsge & Skills -->
-        <div id="skills-container" class="mt-10">
-          <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl"> Knowledge & Skills </h2>
-          <div class="h-0.5 max-w-[300px] bg-gradient-to-r from-blue-500/10 via-blue-500/50 to-pink-500 my-4"></div>
+          <div class="rounded-full p-0.5 max-w-[400px] bg-gradient-to-r from-blue-500/70 via-pink-500/50 to-pink-500/0">
+            <h2 class="ml-5 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100"> Bio </h2>
+          </div>
+          <div class="p-4">
 
-          <!-- Knowledge -->
-          <h3 id="knowledge-title" class="text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-100 p-3"> Knowledge </h3>
-          <ol class="list-disc pl-5 text-gray-300 ml-6 marker:text-yellow-600/80">
+            <p class="my-6 text-lg text-gray-200"> Ottimizzazione, organizzazione e analisi logica rappresentano il punto d'incontro tra la mia natura e il mondo IT. </p>
+
+            <p class="my-6 text-lg text-gray-200"> Durante esperienze lavorative diversificate in cui i responsabili hanno apprezzato il mio lavoro, tavolta offrendomi promozioni, ho consolidato la sicurezza di essere affidabile e apprezzato. </p>
+
+            <p class="my-6 text-lg text-gray-200"> Sono in grado di sintetizzare concetti complessi e comunicarli con chiarezza, rendendoli accessibili anche a interlocutori meno tecnici. </p>
+          </div>
+        </div>
+
+        <!-- Knowledge & Skills -->
+        <div id="skills-container" class="mt-20">
+          <div class="rounded-full p-0.5 max-w-[400px] bg-gradient-to-r from-purple-500/70 via-blue-500/50 to-pink-500/0">
+            <h2 class="ml-5 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 text-4xl"> Knowledge & Skills </h2>
+          </div>
+
+          <div class="p-4">
+            
+            
+            <!-- Knowledge -->
+          <h3 id="knowledge-title" class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 p-3"> Knowledge </h3>
+          <ol class="list-disc pl-5 text-gray-200 ml-6 marker:text-yellow-600/40 text-lg">
             <li> Web Programming </li>
             <li> React</li>
             <li> Tailwind </li>
-            <li> Java, Python, C </li>
             <li> Java </li>
+            <li> Python </li>
+            <li> C </li>
           </ol>
           <!-- Skills -->
-          <h3 id="knowledge-title" class="text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-100 p-3 mt-3"> Skills </h3>
-          <ol class="list-disc pl-5 text-white text-gray-300 ml-6 marker:text-yellow-600/80">
-            <li>english</li>
-            <li>capacità di sintesi</li>
-            <li>organizzato</li>
-            <li>pacifico</li>
+          <h3 id="knowledge-title"
+            class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 p-3 mt-3"> Skills </h3>
+          <ol class="list-disc pl-5 text-gray-200 ml-6 marker:text-yellow-600/40 text-lg">
+            <li> Ottimo inglese </li>
+            <li> Capacità di sintesi </li>
+            <li> Organizzato </li>
+            <li> Natura mite e solare </li>
+            </div>
         </div>
       </div>
 
 
       <!-- Contenuto metà destra -->
-      <div id="area-dx" class="w-full md:w-1/2 p-8 lg:ml-[250px]">
+      <div id="area-dx" class="w-full md:w-1/2 p-8 lg:p-20">
         <!-- Timeline -->
-        <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl"> History
-        </h2>
-        <div class="h-0.5 max-w-[300px] bg-gradient-to-r from-blue-500/20 via-purple-500 to-pink-500/20 my-4"></div>
+        <div class="max-w-[400px] p-0.5 bg-gradient-to-r from-pink-500/70 via-blue-500/50 to-purple-500/0 rounded-full">
+          <h2 class="ml-5 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100"> History </h2>
+        </div>
         <div id="timeline-container" class="ml-5 pr-5 py-10">
           <!-- DBSystem -->
           <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
@@ -92,7 +105,8 @@
                 class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                 <img src="/media/cv/logo_cmd.png" alt="Hinto®Group" class="w-8 h-8 rounded-full">
               </div>
-              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"> Jan 2025 · Aug 2025 </p>
+              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-400 trackign-widest"> Jan 2025 · Aug 2025
+              </p>
               <h3 class="my-1 text-lg font-bold dark:text-neutral-100">System Administrator & Developer</h3>
               <p class="mb-1 text-sm font-medium dark:text-neutral-300">Gruppo2B</p>
               <p class="text-sm font-light text-neutral-600 dark:text-neutral-400"> Home Assistant, Odoo </p>
@@ -105,7 +119,8 @@
                 class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                 <img src="/media/cv/logo_unibo.png" alt="Hinto®Group" class="w-8 h-8 rounded-full">
               </div>
-              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"> Sep 2020 · Dec 2024 </p>
+              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-400 trackign-widest"> Sep 2020 · Dec 2024
+              </p>
               <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Student</h3>
               <p class="mb-1 text-sm font-medium dark:text-neutral-300">Alma Mater · Bologna</p>
               <p class="text-sm font-light text-neutral-600 dark:text-neutral-400"> Learning to learn </p>
@@ -118,10 +133,11 @@
                 class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                 <img src="/media/cv/logo_wall.png" alt="Lab101 Srl" class="w-8 h-8 rounded-full">
               </div>
-              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"> 2020 </p>
+              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-400 trackign-widest"> 2020 </p>
               <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Carpenter</h3>
               <p class="mb-1 text-sm font-medium dark:text-neutral-300">Venus Italy</p>
-              <p class="text-sm font-light text-neutral-600 dark:text-neutral-400"> Building prefabricated bathrooms </p>
+              <p class="text-sm font-light text-neutral-600 dark:text-neutral-400"> Building prefabricated bathrooms
+              </p>
             </div>
           </div>
           <!-- Bicycle -->
@@ -131,7 +147,7 @@
                 class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                 <img src="/media/cv/logo_bike.png" alt="Vision Lab Apps Srl" class="w-8 h-8 rounded-full">
               </div>
-              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"> 2019 </p>
+              <p class="text-xs uppercase text-neutral-400 dark:text-neutral-400 trackign-widest"> 2019 </p>
               <h3 class="my-1 text-lg font-bold dark:text-neutral-100"> Bicycle Mechanic</h3>
               <p class="mb-1 text-sm font-medium dark:text-neutral-300">Galetti</p>
               <p class="text-sm font-light text-neutral-600 dark:text-neutral-400"> Building and fixing bikes </p>
@@ -143,7 +159,7 @@
               class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
               <img src="/media/cv/logo_plumbing.png" alt="WeAppHeroes by Sunscious" class="w-8 h-8 rounded-full">
             </div>
-            <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"> 2017 · 2018 </p>
+            <p class="text-xs uppercase text-neutral-400 dark:text-neutral-400 trackign-widest"> 2017 · 2018 </p>
             <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Plumber</h3>
             <p class="mb-1 text-sm font-medium dark:text-neutral-300">CS Impianti | Alpetherm</p>
             <p class="text-sm font-light text-neutral-600 dark:text-neutral-400"> Just plumbing around </p>
@@ -155,7 +171,7 @@
 
 
 
-    
+
 
 
 
