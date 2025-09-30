@@ -51,7 +51,7 @@
           <div class="rounded-full p-1 max-w-[400px] bg-gradient-to-r from-blue-500/70 via-pink-500/50 to-pink-500/0">
             <h2 class="ml-5 text-3xl font-bold tracking-tight text-neutral-100"> Bio </h2>
           </div>
-          <div id="bio-text" class="p-4 max-w-[600px] overflow-hidden transition-all duration-500">
+          <div id="bio-text" class="p-4 max-w-[600px] overflow-hidden transition-all duration-500" style="max-height:288px;">
             <p class="my-6 text-lg text-gray-200">  <span class="font-bold"> Ottimizzazione, organizzazione </span> e <span class="font-bold"> analisi logica</span> rappresentano il punto d'incontro tra la mia natura e il mondo IT. </p>
 
             <p class="my-6 text-lg text-gray-200"> Durante esperienze lavorative diversificate in cui i responsabili
@@ -74,7 +74,7 @@
             </p>
           </div>
           <div >
-            <button id="toggle-bio" class="mt-2 text-blue-400 font-bold italic font-2xl hover:underline ml-[30%]">- Altro -</button>
+            <button id="toggle-bio" class="mt-2 text-blue-400 font-bold italic font-2xl hover:underline ml-[30%]">↓ Altro ↓</button>
           </div>
         </div>
 
@@ -121,7 +121,7 @@
           <div class="pb-10 border-l border-neutral-500">
             <div class="relative flex flex-col justify-start pl-12">
               <div class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full bg-slate-600 w-14 h-14 border-neutral-500">
-                <img src="/media/cv/logo_cmd.png" class="w-11 h-11 rounded-full">
+                <img src="/media/cv/logo_cmd.png" class="w-10 h-10 rounded-full">
               </div>
               <p class="text-sm uppercase text-neutral-400 tracking-wide"> Gen 2025 · Ago 2025
               </p>
@@ -135,7 +135,7 @@
             <div class="relative flex flex-col justify-start pl-12">
               <div
                 class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full bg-slate-600 w-14 h-14 border-neutral-500">
-                <img src="/media/cv/logo_unibo.png" class="w-11 h-11 rounded-full">
+                <img src="/media/cv/logo_unibo.png" class="w-10 h-10 rounded-full">
               </div>
               <p class="text-sm uppercase text-neutral-400 tracking-wide"> Set 2020 · Dic 2024 </p>
               <h3 class="my-1 text-2xl font-bold text-neutral-100">Studente</h3>
@@ -147,7 +147,7 @@
           <div class="pb-10 border-l border-neutral-500">
             <div class="relative flex flex-col justify-start pl-12">
               <div class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full bg-slate-600 w-14 h-14 border-neutral-500">
-                <img src="/media/cv/logo_wall.png" class="w-11 h-11 rounded-full">
+                <img src="/media/cv/logo_wall.png" class="w-10 h-10 rounded-full">
               </div>
               <p class="text-sm uppercase text-neutral-400 text-neutral-400 tracking-wide"> 2020 </p>
               <h3 class="my-1 text-2xl font-bold text-neutral-100">Carpentiere</h3>
@@ -159,7 +159,7 @@
           <div class="pb-10 border-l border-neutral-500">
             <div class="relative flex flex-col justify-start pl-12">
               <div class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full bg-slate-600 w-14 h-14 border-neutral-500">
-                <img src="/media/cv/logo_bike.png" class="w-11 h-11 rounded-full">
+                <img src="/media/cv/logo_bike.png" class="w-10 h-10 rounded-full">
               </div>
               <p class="text-sm uppercase text-neutral-400 tracking-wide"> 2019 </p>
               <h3 class="my-1 text-2xl font-bold text-neutral-100"> Meccanico di biciclette</h3>
@@ -171,7 +171,7 @@
           <!-- Plumber -->
           <div class="relative flex flex-col justify-start pl-12">
             <div class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full bg-slate-600 w-14 h-14 border-neutral-500">
-              <img src="/media/cv/logo_plumbing.png" class="w-11 h-11 rounded-full">
+              <img src="/media/cv/logo_plumbing.png" class="w-10 h-10 rounded-full">
             </div>
             <p class="text-sm uppercase text-neutral-400 tracking-wide"> 2017 · 2018 </p>
             <h3 class="my-1 text-2xl font-bold text-neutral-100">Idraulico</h3>
@@ -202,14 +202,18 @@
       const toggleBtn = document.getElementById('toggle-bio');
       let expanded = false;
 
+      const collapsedHeight = 288; // 18rem * 16px (default font-size)
+      bioText.style.maxHeight = collapsedHeight + 'px';
+
       toggleBtn.onclick = () => {
         expanded = !expanded;
         if (expanded) {
+          bioText.offsetHeight; // force repaint
           bioText.style.maxHeight = bioText.scrollHeight + 'px';
           toggleBtn.textContent = '↑ Meno ↑';
         } else {
-          bioText.style.maxHeight = '18rem';
-          toggleBtn.textContent = '- Altro -';
+          bioText.style.maxHeight = collapsedHeight + 'px';
+          toggleBtn.textContent = '↓ Altro ↓';
         }
       };
 
