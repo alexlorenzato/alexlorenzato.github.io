@@ -659,6 +659,10 @@ video {
   margin-left: 1.5rem;
 }
 
+.ml-\[30\%\] {
+  margin-left: 30%;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -667,32 +671,16 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
 
 .mt-\[110px\] {
   margin-top: 110px;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.ml-\[20\%\] {
-  margin-left: 20%;
-}
-
-.ml-\[30\%\] {
-  margin-left: 30%;
-}
-
-.ml-\[35\%\] {
-  margin-left: 35%;
-}
-
-.ml-\[25\%\] {
-  margin-left: 25%;
 }
 
 .block {
@@ -715,28 +703,8 @@ video {
   height: 3.5rem;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-9 {
   height: 2.25rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
-.h-11 {
-  height: 2.75rem;
-}
-
-.max-h-24 {
-  max-height: 6rem;
-}
-
-.max-h-72 {
-  max-height: 18rem;
 }
 
 .w-10 {
@@ -745,10 +713,6 @@ video {
 
 .w-14 {
   width: 3.5rem;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-9 {
@@ -763,20 +727,8 @@ video {
   width: 100%;
 }
 
-.w-12 {
-  width: 3rem;
-}
-
-.w-11 {
-  width: 2.75rem;
-}
-
 .max-w-\[250px\] {
   max-width: 250px;
-}
-
-.max-w-\[300px\] {
-  max-width: 300px;
 }
 
 .max-w-\[400px\] {
@@ -785,10 +737,6 @@ video {
 
 .max-w-\[600px\] {
   max-width: 600px;
-}
-
-.max-w-xl {
-  max-width: 36rem;
 }
 
 .-translate-x-1\/2 {
@@ -881,29 +829,14 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
-.bg-slate-700 {
+.bg-slate-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity, 1));
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-b {
@@ -1044,10 +977,6 @@ video {
   text-align: center;
 }
 
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -1107,6 +1036,10 @@ video {
   font-style: italic;
 }
 
+.tracking-normal {
+  letter-spacing: 0em;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -1117,10 +1050,6 @@ video {
 
 .tracking-widest {
   letter-spacing: 0.1em;
-}
-
-.tracking-normal {
-  letter-spacing: 0em;
 }
 
 .text-blue-400 {
@@ -1153,11 +1082,6 @@ video {
   color: rgb(163 163 163 / var(--tw-text-opacity, 1));
 }
 
-.text-neutral-900 {
-  --tw-text-opacity: 1;
-  color: rgb(23 23 23 / var(--tw-text-opacity, 1));
-}
-
 .text-pink-600 {
   --tw-text-opacity: 1;
   color: rgb(219 39 119 / var(--tw-text-opacity, 1));
@@ -1176,16 +1100,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
-}
-
-.text-neutral-500 {
-  --tw-text-opacity: 1;
-  color: rgb(115 115 115 / var(--tw-text-opacity, 1));
 }
 
 .antialiased {
@@ -1223,8 +1137,40 @@ video {
   color: rgb(202 138 4 / 0.4);
 }
 
+.marker\:text-yellow-600\/70 *::marker {
+  color: rgb(202 138 4 / 0.7);
+}
+
+.marker\:text-yellow-500\/70 *::marker {
+  color: rgb(234 179 8 / 0.7);
+}
+
+.marker\:text-yellow-400\/70 *::marker {
+  color: rgb(250 204 21 / 0.7);
+}
+
+.marker\:text-yellow-400\/90 *::marker {
+  color: rgb(250 204 21 / 0.9);
+}
+
 .marker\:text-yellow-600\/40::marker {
   color: rgb(202 138 4 / 0.4);
+}
+
+.marker\:text-yellow-600\/70::marker {
+  color: rgb(202 138 4 / 0.7);
+}
+
+.marker\:text-yellow-500\/70::marker {
+  color: rgb(234 179 8 / 0.7);
+}
+
+.marker\:text-yellow-400\/70::marker {
+  color: rgb(250 204 21 / 0.7);
+}
+
+.marker\:text-yellow-400\/90::marker {
+  color: rgb(250 204 21 / 0.9);
 }
 
 .hover\:text-gray-500:hover {
@@ -1270,10 +1216,6 @@ video {
 
   .lg\:max-w-\[350px\] {
     max-width: 350px;
-  }
-
-  .lg\:max-w-\[3450px\] {
-    max-width: 3450px;
   }
 
   .lg\:max-w-\[450px\] {
