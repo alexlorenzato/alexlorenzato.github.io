@@ -52,7 +52,8 @@
 
 
     <!-- Galleria -->
-    <div id="gallery" class="columns-1 md:columns-3 gap-4 w-full space-y-4"></div>
+    <div id="gallery" class="opacity-0 transition-opacity duration-500 columns-1 md:columns-3 gap-4 w-full space-y-4"></div>
+
 
 
     <!-- Modalità full screen -->
@@ -85,17 +86,32 @@
     /**********************************************/
     // Carica le img della cartella basePath nel DOM 
     function loadImages(basePath, maxCount = 100) {
-      gallery.innerHTML = '';
-      for (let i = 1; i <= maxCount; i++) {
-        const img = document.createElement('img');
-        img.dataset.src = `${basePath}/img-${i}.jpg`;
-        img.className = 'lazy-image mb-4 w-full rounded-lg cursor-pointer break-inside-avoid opacity-0';
-        img.onerror = () => img.remove();  
-        img.onload = () => img.classList.add('opacity-100');  
-        gallery.appendChild(img);
+        gallery.classList.add('opacity-0');  // fade out prima del caricamento
+        gallery.innerHTML = '';               // svuota la galleria
+
+        for (let i = 1; i <= maxCount; i++) {
+          const img = document.createElement('img');
+          img.dataset.src = `${basePath}/img-${i}.jpg`;
+          img.className = 'lazy-image w-full h-auto max-w-full rounded cursor-pointer opacity-0 transition-opacity duration-500 break-inside-avoid';
+          img.onerror = () => img.remove();       // rimuove immagine se non esiste
+          img.onload = () => img.classList.add('opacity-100');  // fade in immagine
+
+          gallery.appendChild(img);
+        }
+
+        initLazyLoading();
+
+        showGallery();  // mostra la galleria con fade in
       }
-      initLazyLoading();
-    }
+
+
+    function showGallery() {
+        // dopo 500ms, mostra la sezione
+        setTimeout(() => {
+          gallery.classList.remove('opacity-0');
+          gallery.classList.add('opacity-100');
+        }, 100);
+      }
 
     // Crea l'observer che gestisce caricamento immagini mentre si scrolla
     function initLazyLoading() {
