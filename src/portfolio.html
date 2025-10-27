@@ -1,125 +1,190 @@
 <!DOCTYPE html>
 <html lang="it">
-
-
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../dist/output.css" rel="stylesheet" />
-    <title> Lorenzato - Portfolio </title>
+    <title>Lorenzato - Portfolio</title>
   </head>
 
-
   <body class="antialiased bg-gradient-to-r from-slate-950 to-teal-950">
-
     <!--## NAVBAR ##-->
     <nav class="p-6">
       <div class="mx-auto flex items-center">
         <!-- Menu desktop -->
-        <ul id="menu" class="hidden lg:flex mx-auto justify-center space-x-8 text-white">
-          <li><a href="/" class="hover:text-gray-500 text-xl font-mono tracking-widest">Home</a></li>
-          <li><a href="about.html" class="hover:text-gray-500 text-xl font-mono tracking-widest">About</a></li>
-          <li><a href="#" class="hover:text-gray-500 text-xl font-mono tracking-wide">Portfolio</a></li>
-          <li><a href="photography.html" class="hover:text-gray-500 text-xl font-mono tracking-wide">Photography</a></li>
+        <ul
+          id="menu"
+          class="hidden lg:flex mx-auto justify-center space-x-8 text-white"
+        >
+          <li>
+            <a
+              href="/"
+              class="hover:text-gray-500 text-xl font-mono tracking-widest"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="hover:text-gray-500 text-xl font-mono tracking-widest"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:text-gray-500 text-xl font-mono tracking-wide"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="photography.html"
+              class="hover:text-gray-500 text-xl font-mono tracking-wide"
+              >Photography</a
+            >
+          </li>
         </ul>
         <!-- Hamburger button -->
-        <button id="hamburger" class="lg:hidden text-white focus:outline-none ml-auto">
-          <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <button
+          id="hamburger"
+          class="lg:hidden text-white focus:outline-none ml-auto"
+        >
+          <svg
+            class="w-9 h-9"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
           </svg>
         </button>
       </div>
       <!-- Menu mobile -->
-      <ul id="mobileMenu" class="left-1/2 -translate-x-1/2 w-[95%] mx-auto rounded-2xl bg-gradient-to-b from-gray-950/0 to-gray-950 lg:hidden flex flex-col text-white items-center fixed z-50 pb-4 transition-all duration-300 ease-in-out opacity-0 -translate-y-3 pointer-events-none">
-        <li><a href="/" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest">Home</a></li>
-        <li><a href="about.html" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest">About</a></li>
-        <li><a href="#" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide">Portfolio</a></li>
-        <li><a href="photography.html" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide">Photography</a></li>
+      <ul
+        id="mobileMenu"
+        class="left-1/2 -translate-x-1/2 w-[95%] mx-auto rounded-2xl bg-gradient-to-b from-gray-950/0 to-gray-950 lg:hidden flex flex-col text-white items-center fixed z-50 pb-4 transition-all duration-300 ease-in-out opacity-0 -translate-y-3 pointer-events-none"
+      >
+        <li>
+          <a
+            href="/"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="about.html"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide"
+            >Portfolio</a
+          >
+        </li>
+        <li>
+          <a
+            href="photography.html"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide"
+            >Photography</a
+          >
+        </li>
       </ul>
+      <div
+        id="menuOverlay"
+        class="fixed inset-0 z-40 bg-black bg-opacity-0 hidden"
+      ></div>
     </nav>
-
 
     <!-- Odoo WebApp -->
 
-    <h2 id="expandable-header" class="flex items-center justify-center text-4xl font-bold cursor-pointer select-none text-gray-200 text-center space-x-2">
-      <svg id="toggle-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    <h2
+      id="expandable-header"
+      class="flex items-center justify-center text-4xl font-bold cursor-pointer select-none text-gray-200 text-center space-x-2"
+    >
+      <svg
+        id="toggle-icon"
+        class="w-6 h-6 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"
+        ></path>
       </svg>
       <span> WebApp per task Odoo</span>
     </h2>
-     
-  
-    <div id="expandable-content" class="flex flex-column mx-8 mt-3 max-h-0 overflow-hidden transition-all duration-500 text-white">
-      <div class="text-white mx-auto max-w-[1000px]">
 
-        <hr class="w-full h-1 mx-auto my-4 bg-gray-600 border-0 rounded-sm">
-        
-        <h3 class="text-2xl font-bold"> Progetto </h3>
-        <p class="mt-0 mb-5 text-lg text-neutral-200">Webapp per la gestione di task tramite API di Odoo. </p>
-        
-        <h3 class="text-2xl font-bold"> Tecnologia </h3>
-        <p class="mt-0 mb-5 text-lg text-neutral-200">React</p>
-        
-        <h3 class="text-2xl font-bold"> Contesto </h3>
+    <div
+      id="expandable-content"
+      class="flex flex-column mx-8 mt-3 max-h-0 overflow-hidden transition-all duration-500 text-white"
+    >
+      <div class="text-white mx-auto max-w-[1000px]">
+        <hr class="w-full h-1 mx-auto my-4 bg-gray-600 border-0 rounded-sm" />
+
+        <h3 class="text-2xl font-bold">Progetto</h3>
         <p class="mt-0 mb-5 text-lg text-neutral-200">
-          Odoo consente una gestione completa dei progetti, inclusa la contabilità delle ore lavorate e la
-          suddivisione in task. Tuttavia, ogni utente Odoo richiede un abbonamento mensile, con costi che aumentano
-          significativamente anche con pochi utenti.
-          </p>
-          
-          <h3 class="text-2xl font-bold"> Obiettivo </h3>
-          <p class="mt-0 mb-5 text-lg text-neutral-200">
-            Ridurre i costi derivanti da molteplici abbonamenti mensili, mantenendo la possibilità di tracciare
-            le ore lavorate dai collaboratori.
-          </p>
-          
-          <h3 class="text-2xl font-bold"> Soluzione </h3>
-          <p class="mt-0 mb-5 text-lg text-neutral-200">
-            Ho creato un modello custom "modello_collaboratore" all'interno di Odoo, includendo campi come Username,
-            Password, Valore (€) e altri. La webapp sviluppata si interfaccia con questo modello tramite le API di Odoo,
-            permettendo
-          l'autenticazione tramite credenziali personali, il monitoraggio delle ore per ogni collaboratore e la reportistica
-          necessaria. Pur con alcune limitazioni rispetto all'uso di utenti Odoo con abbonamento, questo approccio garantisce un
-          significativo risparmio economico e soddisfa le funzionalità richieste.
+          Webapp per la gestione di task tramite API di Odoo.
         </p>
 
-        <video src="../media/portfolio/webapp-odoo-tasks.mp4" controls autoplay muted loop class="w-full max-w-[800px] rounded-lg mx-auto"></video>
+        <h3 class="text-2xl font-bold">Tecnologia</h3>
+        <p class="mt-0 mb-5 text-lg text-neutral-200">React</p>
 
-        <hr class="w-full h-1 mx-auto my-4 bg-gray-600 border-0 rounded-sm">
+        <h3 class="text-2xl font-bold">Contesto</h3>
+        <p class="mt-0 mb-5 text-lg text-neutral-200">
+          Odoo consente una gestione completa dei progetti, inclusa la
+          contabilità delle ore lavorate e la suddivisione in task. Tuttavia,
+          ogni utente Odoo richiede un abbonamento mensile, con costi che
+          aumentano significativamente anche con pochi utenti.
+        </p>
+
+        <h3 class="text-2xl font-bold">Obiettivo</h3>
+        <p class="mt-0 mb-5 text-lg text-neutral-200">
+          Ridurre i costi derivanti da molteplici abbonamenti mensili,
+          mantenendo la possibilità di tracciare le ore lavorate dai
+          collaboratori.
+        </p>
+
+        <h3 class="text-2xl font-bold">Soluzione</h3>
+        <p class="mt-0 mb-5 text-lg text-neutral-200">
+          Ho creato un modello custom "modello_collaboratore" all'interno di
+          Odoo, includendo campi come Username, Password, Valore (€) e altri. La
+          webapp sviluppata si interfaccia con questo modello tramite le API di
+          Odoo, permettendo l'autenticazione tramite credenziali personali, il
+          monitoraggio delle ore per ogni collaboratore e la reportistica
+          necessaria. Pur con alcune limitazioni rispetto all'uso di utenti Odoo
+          con abbonamento, questo approccio garantisce un significativo
+          risparmio economico e soddisfa le funzionalità richieste.
+        </p>
+
+        <video
+          src="../media/portfolio/webapp-odoo-tasks.mp4"
+          controls
+          autoplay
+          muted
+          loop
+          class="w-full max-w-[800px] rounded-lg mx-auto"
+        ></video>
+
+        <hr class="w-full h-1 mx-auto my-4 bg-gray-600 border-0 rounded-sm" />
       </div>
     </div>
   </body>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    hamburger.addEventListener("click", () => {
-      if (mobileMenu.classList.contains("opacity-0")) {
-        mobileMenu.classList.remove("opacity-0", "-translate-y-3", "pointer-events-none");
-        mobileMenu.classList.add("opacity-100", "translate-y-0", "pointer-events-auto");
-      } else {
-        mobileMenu.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
-        mobileMenu.classList.add("opacity-0", "-translate-y-4", "pointer-events-none");
-      }
-    });
-
-    const header = document.getElementById('expandable-header');
-      const content = document.getElementById('expandable-content');
-      const toggleIcon = document.getElementById('toggle-icon');
-      let expanded = false;
-
-      header.addEventListener('click', () => {
-        expanded = !expanded;
-        if (expanded) {
-          content.style.maxHeight = content.scrollHeight + "px";
-          toggleIcon.classList.add('rotate-90');
-        } else {
-          content.style.maxHeight = "0px";
-          toggleIcon.classList.remove('rotate-90');
-        }
-      });
-
-  </script>
-
+  <script src="../script/hide-navbar.js"></script>
 </html>

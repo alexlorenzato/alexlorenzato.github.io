@@ -1,135 +1,245 @@
 <!DOCTYPE html>
 <html lang="it">
-
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../dist/output.css" rel="stylesheet" />
     <title>Photography</title>
   </head>
 
   <body class="antialiased bg-black">
-
     <!-- NavBar -->
     <nav class="p-6">
       <div class="mx-auto flex items-center">
         <!-- Menu desktop (nascosto su mobile) -->
-        <ul id="menu" class="hidden lg:flex mx-auto justify-center space-x-8 text-white">
-          <li><a href="/" class="hover:text-gray-500 text-xl font-mono tracking-widest">Home</a></li>
-          <li><a href="about.html" class="hover:text-gray-500 text-xl font-mono tracking-widest">About</a></li>
-          <li><a href="portfolio.html" class="hover:text-gray-500 text-xl font-mono tracking-wide">Portfolio</a></li>
-          <li><a href="#" class="hover:text-gray-500 text-xl font-mono tracking-wide">Photography</a></li>
+        <ul
+          id="menu"
+          class="hidden lg:flex mx-auto justify-center space-x-8 text-white"
+        >
+          <li>
+            <a
+              href="/"
+              class="hover:text-gray-500 text-xl font-mono tracking-widest"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="hover:text-gray-500 text-xl font-mono tracking-widest"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="portfolio.html"
+              class="hover:text-gray-500 text-xl font-mono tracking-wide"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:text-gray-500 text-xl font-mono tracking-wide"
+              >Photography</a
+            >
+          </li>
         </ul>
         <!-- Hamburger button -->
-        <button id="hamburger" class="lg:hidden text-white focus:outline-none ml-auto">
-          <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <button
+          id="hamburger"
+          class="lg:hidden text-white focus:outline-none ml-auto"
+        >
+          <svg
+            class="w-9 h-9"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
           </svg>
         </button>
       </div>
       <!-- Menu mobile -->
-      <ul id="mobileMenu"
-        class="left-1/2 -translate-x-1/2 w-[95%] mx-auto rounded-2xl bg-gradient-to-b from-gray-950/0 to-gray-950 lg:hidden flex flex-col text-white items-center fixed z-50 pb-4 transition-all duration-300 ease-in-out opacity-0 -translate-y-3 pointer-events-none">
-        <li><a href="/" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest">Home</a></li>
-        <li><a href="about.html" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest">About</a></li>
-        <li><a href="portfolio.html" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide">Portfolio</a></li>
-        <li><a href="#" class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide">Photography</a></li>
+      <ul
+        id="mobileMenu"
+        class="left-1/2 -translate-x-1/2 w-[95%] mx-auto rounded-2xl bg-gradient-to-b from-gray-950/0 to-gray-950 lg:hidden flex flex-col text-white items-center fixed z-50 pb-4 transition-all duration-300 ease-in-out opacity-0 -translate-y-3 pointer-events-none"
+      >
+        <li>
+          <a
+            href="/"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="about.html"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-widest"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="portfolio.html"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide"
+            >Portfolio</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 hover:text-gray-500 rounded text-xl lg:text-4xl font-mono tracking-wide"
+            >Photography</a
+          >
+        </li>
       </ul>
+      <div
+        id="menuOverlay"
+        class="fixed inset-0 z-40 bg-black bg-opacity-0 hidden"
+      ></div>
     </nav>
 
-
     <!-- Categoria con sottomenu videogiochi -->
-    <div class="flex justify-center items-center mt-4 mb-6 space-x-12 text-white font-mono tracking-widest text-lg">
-      <button id="btnPhotography" class="hover:text-gray-400">PHOTOGRAPHY</button>
+    <div
+      class="flex justify-center items-center mt-4 mb-6 space-x-12 text-white font-mono tracking-widest text-lg"
+    >
+      <button id="btnPhotography" class="hover:text-gray-400">
+        PHOTOGRAPHY
+      </button>
       <div class="relative">
-        <button id="videogameSelector" aria-haspopup="true" aria-expanded="false" class="cursor-pointer hover:text-gray-400 transition-colors select-none focus:outline-none">VIDEOGAMES</button>
-        <ul id="submenu" class="absolute left-1/2 top-full -translate-x-1/2 mt-1 bg-gray-900 border border-gray-800 rounded-lg shadow-xl p-4 space-y-2 text-center hidden min-w-[160px] z-50 transition-all duration-150 opacity-0 -translate-y-1 scale-95 pointer-events-none">
-          <li><button data-folder="rdr2" class="submenu-btn hover:text-gray-400 w-full"> RDR2 </button></li>
-          <li><button data-folder="warhammer" class="submenu-btn hover:text-gray-400 w-full"> Warhammer </button></li>
+        <button
+          id="videogameSelector"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="cursor-pointer hover:text-gray-400 transition-colors select-none focus:outline-none"
+        >
+          VIDEOGAMES
+        </button>
+        <ul
+          id="submenu"
+          class="absolute left-1/2 top-full -translate-x-1/2 mt-1 bg-gray-900 border border-gray-800 rounded-lg shadow-xl p-4 space-y-2 text-center hidden min-w-[160px] z-50 transition-all duration-150 opacity-0 -translate-y-1 scale-95 pointer-events-none"
+        >
+          <li>
+            <button
+              data-folder="rdr2"
+              class="submenu-btn hover:text-gray-400 w-full"
+            >
+              RDR2
+            </button>
+          </li>
+          <li>
+            <button
+              data-folder="warhammer"
+              class="submenu-btn hover:text-gray-400 w-full"
+            >
+              Warhammer
+            </button>
+          </li>
         </ul>
       </div>
     </div>
 
-
     <!-- Galleria -->
-    <div id="gallery" class="opacity-0 transition-opacity duration-500 columns-1 md:columns-3 gap-4 w-full space-y-4"></div>
-
-
+    <div
+      id="gallery"
+      class="opacity-0 transition-opacity duration-500 columns-1 md:columns-3 gap-4 w-full space-y-4"
+    ></div>
 
     <!-- Modalità full screen -->
-    <div id="imageModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-10 ">
-      <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl opacity-70 hover:opacity-100 z-60 cursor-pointer select-none">&lt;</button>
-      <div class="p-3 bg-gray-200/80 rounded-lg shadow-lg max-w-xl border border-white">
-        <img id="modalImage" class="max-h-[80vh] max-w-full rounded">
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/80 hidden items-center justify-center z-10"
+    >
+      <button
+        id="prevBtn"
+        class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl opacity-70 hover:opacity-100 z-60 cursor-pointer select-none"
+      >
+        &lt;
+      </button>
+      <div
+        class="p-3 bg-gray-200/80 rounded-lg shadow-lg max-w-xl border border-white"
+      >
+        <img id="modalImage" class="max-h-[80vh] max-w-full rounded" />
       </div>
-      <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl opacity-70 hover:opacity-100 z-60 cursor-pointer select-none">&gt;</button>
+      <button
+        id="nextBtn"
+        class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl opacity-70 hover:opacity-100 z-60 cursor-pointer select-none"
+      >
+        &gt;
+      </button>
     </div>
-
   </body>
-
-
-  
 
   <script>
     /**********************************************/
     /*                 Variabili                  */
     /**********************************************/
-    const gallery = document.getElementById('gallery');
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
+    const gallery = document.getElementById("gallery");
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
 
     let currentImageIndex = -1;
     let loadedImages = [];
 
-
     /**********************************************/
     /*                  Funzioni                  */
     /**********************************************/
-    // Carica le img della cartella basePath nel DOM 
+    // Carica le img della cartella basePath nel DOM
     function loadImages(basePath, maxCount = 100) {
-        gallery.classList.add('opacity-0');  // fade out prima del caricamento
-        gallery.innerHTML = '';               // svuota la galleria
+      gallery.classList.add("opacity-0"); // fade out prima del caricamento
+      gallery.innerHTML = ""; // svuota la galleria
 
-        for (let i = 1; i <= maxCount; i++) {
-          const img = document.createElement('img');
-          img.dataset.src = `${basePath}/img-${i}.jpg`;
-          img.className = 'lazy-image w-full h-auto max-w-full rounded cursor-pointer opacity-0 transition-opacity duration-500 break-inside-avoid';
-          img.onerror = () => img.remove();       // rimuove immagine se non esiste
-          img.onload = () => img.classList.add('opacity-100');  // fade in immagine
+      for (let i = 1; i <= maxCount; i++) {
+        const img = document.createElement("img");
+        img.dataset.src = `${basePath}/img-${i}.jpg`;
+        img.className =
+          "lazy-image w-full h-auto max-w-full rounded cursor-pointer opacity-0 transition-opacity duration-500 break-inside-avoid";
+        img.onerror = () => img.remove(); // rimuove immagine se non esiste
+        img.onload = () => img.classList.add("opacity-100"); // fade in immagine
 
-          gallery.appendChild(img);
-        }
-
-        initLazyLoading();
-
-        showGallery();  // mostra la galleria con fade in
+        gallery.appendChild(img);
       }
 
+      initLazyLoading();
+
+      showGallery(); // mostra la galleria con fade in
+    }
 
     function showGallery() {
-        setTimeout(() => {
-          gallery.classList.remove('opacity-0');
-          gallery.classList.add('opacity-100');
-        }, 8000);
-      }
+      setTimeout(() => {
+        gallery.classList.remove("opacity-0");
+        gallery.classList.add("opacity-100");
+      }, 8000);
+    }
 
     // Crea l'observer che gestisce caricamento immagini mentre si scrolla
     function initLazyLoading() {
-      const lazyLoad = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.onload = () => img.classList.add('opacity-100');
-            lazyLoad.unobserve(img);
-          }
-        });
-      }, { rootMargin: "100px" });
-      document.querySelectorAll('.lazy-image').forEach((img) => lazyLoad.observe(img));
+      const lazyLoad = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.onload = () => img.classList.add("opacity-100");
+              lazyLoad.unobserve(img);
+            }
+          });
+        },
+        { rootMargin: "100px" }
+      );
+      document
+        .querySelectorAll(".lazy-image")
+        .forEach((img) => lazyLoad.observe(img));
     }
 
-
-    // 
+    //
     function showImage(index) {
       if (index < 0) index = loadedImages.length - 1;
       if (index >= loadedImages.length) index = 0;
@@ -137,104 +247,122 @@
       modalImage.src = loadedImages[index].dataset.src;
     }
 
-
-
     /**********************************************/
     /*              AddEventListener              */
     /**********************************************/
 
     // Apri modale e inizializza loadedImages array
-    gallery.addEventListener('click', (e) => {
-      if (e.target.tagName === 'IMG') {
-        loadedImages = Array.from(document.querySelectorAll('#gallery img')).filter(img => img.src && img.naturalWidth > 0);
-        console.log("loadedImages: ", loadedImages.length)
+    gallery.addEventListener("click", (e) => {
+      if (e.target.tagName === "IMG") {
+        loadedImages = Array.from(
+          document.querySelectorAll("#gallery img")
+        ).filter((img) => img.src && img.naturalWidth > 0);
+        console.log("loadedImages: ", loadedImages.length);
         currentImageIndex = loadedImages.indexOf(e.target);
         showImage(currentImageIndex);
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
       }
     });
 
     // Pulsante precedente
-    document.getElementById('prevBtn').addEventListener('click', (e) => {
+    document.getElementById("prevBtn").addEventListener("click", (e) => {
       e.stopPropagation();
       showImage(currentImageIndex - 1);
     });
 
     // Pulsante successivo
-    document.getElementById('nextBtn').addEventListener('click', (e) => {
+    document.getElementById("nextBtn").addEventListener("click", (e) => {
       e.stopPropagation();
       showImage(currentImageIndex + 1);
     });
 
     // Chiudi modale
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener("click", (e) => {
       if (e.target === modal || e.target === modalImage.parentNode) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
       }
     });
 
-    gallery.addEventListener('click', (e) => {
-      if (e.target.tagName === 'IMG') {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
+    gallery.addEventListener("click", (e) => {
+      if (e.target.tagName === "IMG") {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
         modalImage.src = e.target.src;
       }
     });
 
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener("click", (e) => {
       if (e.target === modal || e.target === modalImage.parentNode) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
       }
     });
 
     // Azioni sui bottoni categorie
-    document.getElementById('btnPhotography').addEventListener('click', () => {
-      loadImages('../media/photography/imgs');
+    document.getElementById("btnPhotography").addEventListener("click", () => {
+      loadImages("../media/photography/imgs");
     });
 
-    document.querySelectorAll('.submenu-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
+    document.querySelectorAll(".submenu-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
         const folder = e.target.dataset.folder;
-        console.log("Folder: ", folder)
+        console.log("Folder: ", folder);
         loadImages(`../media/photography/videogames/${folder}`);
       });
     });
 
     // Carica di default la categoria fotografia
-    loadImages('../media/photography/imgs');
+    loadImages("../media/photography/imgs");
   </script>
-
-
-
-
-
 
   <!-- Script per selettore videogiochi -->
   <script>
     (function () {
-      const trigger = document.getElementById('videogameSelector');
-      const submenu = document.getElementById('submenu');
+      const trigger = document.getElementById("videogameSelector");
+      const submenu = document.getElementById("submenu");
       if (!trigger || !submenu) return;
 
       function open() {
-        submenu.classList.remove('hidden', 'opacity-0', '-translate-y-1', 'scale-95', 'pointer-events-none');
-        submenu.classList.add('block', 'opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
-        trigger.setAttribute('aria-expanded', 'true');
+        submenu.classList.remove(
+          "hidden",
+          "opacity-0",
+          "-translate-y-1",
+          "scale-95",
+          "pointer-events-none"
+        );
+        submenu.classList.add(
+          "block",
+          "opacity-100",
+          "translate-y-0",
+          "scale-100",
+          "pointer-events-auto"
+        );
+        trigger.setAttribute("aria-expanded", "true");
       }
 
       function close() {
-        submenu.classList.remove('block', 'opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
-        submenu.classList.add('opacity-0', '-translate-y-1', 'scale-95', 'pointer-events-none');
-        trigger.setAttribute('aria-expanded', 'false');
-        setTimeout(() => submenu.classList.add('hidden'), 160);
+        submenu.classList.remove(
+          "block",
+          "opacity-100",
+          "translate-y-0",
+          "scale-100",
+          "pointer-events-auto"
+        );
+        submenu.classList.add(
+          "opacity-0",
+          "-translate-y-1",
+          "scale-95",
+          "pointer-events-none"
+        );
+        trigger.setAttribute("aria-expanded", "false");
+        setTimeout(() => submenu.classList.add("hidden"), 160);
       }
 
-      trigger.addEventListener('click', (e) => {
+      trigger.addEventListener("click", (e) => {
         e.stopPropagation();
-        if (submenu.classList.contains('opacity-100')) {
+        if (submenu.classList.contains("opacity-100")) {
           close();
         } else {
           open();
@@ -242,37 +370,22 @@
       });
 
       // close on click outside
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         if (!submenu.contains(e.target) && e.target !== trigger) {
-          if (submenu.classList.contains('opacity-100')) close();
+          if (submenu.classList.contains("opacity-100")) close();
         }
       });
 
-      submenu.addEventListener('click', (e) => {
-        const item = e.target.closest('li') || e.target.closest('.submenu-btn');
+      submenu.addEventListener("click", (e) => {
+        const item = e.target.closest("li") || e.target.closest(".submenu-btn");
         if (item) {
           // lascia che eventuali handler associati all'item (es. loadImages) vengano eseguiti
           // quindi chiudi subito dopo con setTimeout 0
           setTimeout(close, 0);
         }
-      })
+      });
     })();
   </script>
 
-  <!-- Script per Navbar -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    hamburger.addEventListener("click", () => {
-      if (mobileMenu.classList.contains("opacity-0")) {
-        mobileMenu.classList.remove("opacity-0", "-translate-y-3", "pointer-events-none");
-        mobileMenu.classList.add("opacity-100", "translate-y-0", "pointer-events-auto");
-      } else {
-        mobileMenu.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
-        mobileMenu.classList.add("opacity-0", "-translate-y-4", "pointer-events-none");
-      }
-    });
-  </script>
-
+  <script src="../script/hide-navbar.js"></script>
 </html>
