@@ -123,13 +123,13 @@
           VIDEOGAMES
         </button>
         <ul
-          id="submenu"
+          id="videogameSubmenu"
           class="absolute left-1/2 top-full -translate-x-1/2 mt-1 bg-gray-900 border border-gray-800 rounded-lg shadow-xl p-4 space-y-2 text-center hidden min-w-[160px] z-50 transition-all duration-150 opacity-0 -translate-y-1 scale-95 pointer-events-none"
         >
           <li>
             <button
               data-folder="rdr2"
-              class="submenu-btn hover:text-gray-400 w-full"
+              class="vg-submenu-btn hover:text-gray-400 w-full"
             >
               RDR2
             </button>
@@ -137,7 +137,7 @@
           <li>
             <button
               data-folder="warhammer"
-              class="submenu-btn hover:text-gray-400 w-full"
+              class="vg-submenu-btn hover:text-gray-400 w-full"
             >
               Warhammer
             </button>
@@ -155,7 +155,7 @@
     <!-- Modalità full screen -->
     <div
       id="imageModal"
-      class="fixed inset-0 bg-black/80 hidden items-center justify-center z-10"
+      class="fixed inset-0 bg-black/80 hidden flex items-center justify-center z-10"
     >
       <button
         id="prevBtn"
@@ -163,9 +163,7 @@
       >
         &lt;
       </button>
-      <div
-        class="p-3 bg-gray-200/80 rounded-lg shadow-lg max-w-xl border border-white"
-      >
+      <div class="p-3 bg-gray-200/80 rounded-lg shadow-lg border border-white">
         <img id="modalImage" class="max-h-[80vh] max-w-full rounded" />
       </div>
       <button
@@ -175,217 +173,10 @@
         &gt;
       </button>
     </div>
+
+    <script src="../script/videogame-select.js"></script>
+    <script src="../script/gallery.js"></script>
   </body>
-
-  <script>
-    /**********************************************/
-    /*                 Variabili                  */
-    /**********************************************/
-    const gallery = document.getElementById("gallery");
-    const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-
-    let currentImageIndex = -1;
-    let loadedImages = [];
-
-    /**********************************************/
-    /*                  Funzioni                  */
-    /**********************************************/
-    // Carica le img della cartella basePath nel DOM
-    function loadImages(basePath, maxCount = 100) {
-      gallery.classList.add("opacity-0"); // fade out prima del caricamento
-      gallery.innerHTML = ""; // svuota la galleria
-
-      for (let i = 1; i <= maxCount; i++) {
-        const img = document.createElement("img");
-        img.dataset.src = `${basePath}/img-${i}.jpg`;
-        img.className =
-          "lazy-image w-full h-auto max-w-full rounded cursor-pointer opacity-0 transition-opacity duration-500 break-inside-avoid";
-        img.onerror = () => img.remove(); // rimuove immagine se non esiste
-        img.onload = () => img.classList.add("opacity-100"); // fade in immagine
-
-        gallery.appendChild(img);
-      }
-
-      initLazyLoading();
-
-      showGallery(); // mostra la galleria con fade in
-    }
-
-    function showGallery() {
-      setTimeout(() => {
-        gallery.classList.remove("opacity-0");
-        gallery.classList.add("opacity-100");
-      }, 8000);
-    }
-
-    // Crea l'observer che gestisce caricamento immagini mentre si scrolla
-    function initLazyLoading() {
-      const lazyLoad = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src;
-              img.onload = () => img.classList.add("opacity-100");
-              lazyLoad.unobserve(img);
-            }
-          });
-        },
-        { rootMargin: "100px" }
-      );
-      document
-        .querySelectorAll(".lazy-image")
-        .forEach((img) => lazyLoad.observe(img));
-    }
-
-    //
-    function showImage(index) {
-      if (index < 0) index = loadedImages.length - 1;
-      if (index >= loadedImages.length) index = 0;
-      currentImageIndex = index;
-      modalImage.src = loadedImages[index].dataset.src;
-    }
-
-    /**********************************************/
-    /*              AddEventListener              */
-    /**********************************************/
-
-    // Apri modale e inizializza loadedImages array
-    gallery.addEventListener("click", (e) => {
-      if (e.target.tagName === "IMG") {
-        loadedImages = Array.from(
-          document.querySelectorAll("#gallery img")
-        ).filter((img) => img.src && img.naturalWidth > 0);
-        console.log("loadedImages: ", loadedImages.length);
-        currentImageIndex = loadedImages.indexOf(e.target);
-        showImage(currentImageIndex);
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-      }
-    });
-
-    // Pulsante precedente
-    document.getElementById("prevBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      showImage(currentImageIndex - 1);
-    });
-
-    // Pulsante successivo
-    document.getElementById("nextBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      showImage(currentImageIndex + 1);
-    });
-
-    // Chiudi modale
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal || e.target === modalImage.parentNode) {
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-      }
-    });
-
-    gallery.addEventListener("click", (e) => {
-      if (e.target.tagName === "IMG") {
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-        modalImage.src = e.target.src;
-      }
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal || e.target === modalImage.parentNode) {
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-      }
-    });
-
-    // Azioni sui bottoni categorie
-    document.getElementById("btnPhotography").addEventListener("click", () => {
-      loadImages("../media/photography/imgs");
-    });
-
-    document.querySelectorAll(".submenu-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const folder = e.target.dataset.folder;
-        console.log("Folder: ", folder);
-        loadImages(`../media/photography/videogames/${folder}`);
-      });
-    });
-
-    // Carica di default la categoria fotografia
-    loadImages("../media/photography/imgs");
-  </script>
-
-  <!-- Script per selettore videogiochi -->
-  <script>
-    (function () {
-      const trigger = document.getElementById("videogameSelector");
-      const submenu = document.getElementById("submenu");
-      if (!trigger || !submenu) return;
-
-      function open() {
-        submenu.classList.remove(
-          "hidden",
-          "opacity-0",
-          "-translate-y-1",
-          "scale-95",
-          "pointer-events-none"
-        );
-        submenu.classList.add(
-          "block",
-          "opacity-100",
-          "translate-y-0",
-          "scale-100",
-          "pointer-events-auto"
-        );
-        trigger.setAttribute("aria-expanded", "true");
-      }
-
-      function close() {
-        submenu.classList.remove(
-          "block",
-          "opacity-100",
-          "translate-y-0",
-          "scale-100",
-          "pointer-events-auto"
-        );
-        submenu.classList.add(
-          "opacity-0",
-          "-translate-y-1",
-          "scale-95",
-          "pointer-events-none"
-        );
-        trigger.setAttribute("aria-expanded", "false");
-        setTimeout(() => submenu.classList.add("hidden"), 160);
-      }
-
-      trigger.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (submenu.classList.contains("opacity-100")) {
-          close();
-        } else {
-          open();
-        }
-      });
-
-      // close on click outside
-      document.addEventListener("click", (e) => {
-        if (!submenu.contains(e.target) && e.target !== trigger) {
-          if (submenu.classList.contains("opacity-100")) close();
-        }
-      });
-
-      submenu.addEventListener("click", (e) => {
-        const item = e.target.closest("li") || e.target.closest(".submenu-btn");
-        if (item) {
-          // lascia che eventuali handler associati all'item (es. loadImages) vengano eseguiti
-          // quindi chiudi subito dopo con setTimeout 0
-          setTimeout(close, 0);
-        }
-      });
-    })();
-  </script>
 
   <script src="../script/hide-navbar.js"></script>
 </html>
