@@ -83,8 +83,13 @@ document.addEventListener("DOMContentLoaded", () => {
       imgElem.src = img.src;
       imgElem.loading = "lazy";
       imgElem.className =
-        "w-full rounded transition-opacity duration-500 hover:brightness-90 cursor-pointer";
+        "w-full rounded opacity-0 transition-opacity duration-500 hover:brightness-90 cursor-pointer";
       gallery.appendChild(imgElem);
+
+      // rimuovo opacity-0 dopo breve delay per attivare il fade-in
+      setTimeout(() => {
+        imgElem.classList.remove("opacity-0");
+      }, 500);
     });
     loadedCount += nextImages.length;
     // Rende visibili le immagini caricate
